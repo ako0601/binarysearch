@@ -24,14 +24,14 @@ namespace ConsoleApp1
 
 
             // catch missing arguments error.
-            //try
-            //{
+            try
+            {
                 filename = args[0];
                 query = args[1];
 
                 // catch file not found exception.
-                //try
-                //{
+                try
+                {
                     var sr = new StreamReader(filename);
                     var sr2 = new StreamReader(query);
                     nn = int.Parse(sr2.ReadLine());
@@ -69,16 +69,16 @@ namespace ConsoleApp1
 
                     sr2.Close();
                     sr.Close();
-            //    }
-            //    catch (FileNotFoundException e)
-            //    {
-            //        Console.WriteLine("File has not found.");
-            //    }
-            //}
-            //catch (IndexOutOfRangeException a)
-            //{
-            //    Console.WriteLine("Missing argument line");
-            //}
+                }
+                catch (FileNotFoundException e)
+                {
+                    Console.WriteLine("File has not found.");
+                }
+            }
+            catch (IndexOutOfRangeException a)
+            {
+                Console.WriteLine("Missing argument line");
+            }
 
         }
     }
